@@ -1,0 +1,40 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+CREATE TABLE IF NOT EXISTS hdwcaptchasite (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  captchas VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS hdwcaptchakeys (
+  username VARCHAR(50) NOT NULL,
+  keytype VARCHAR(50) NOT NULL,
+  keystart VARCHAR(50) NOT NULL,
+  active VARCHAR(50) NOT NULL,
+  secret VARCHAR(255) NOT NULL,
+  hwid VARCHAR(255) NULL
+);
+
+CREATE TABLE IF NOT EXISTS hdwcaptchasube (
+  username VARCHAR(50) NOT NULL,
+  subetype VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS hdwcaptchasitebd (
+  pays VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS hdwcaptchalogs (
+  ip VARCHAR(50) NOT NULL,
+  browser VARCHAR(50) NOT NULL,
+  os VARCHAR(50) NOT NULL,
+  site VARCHAR(50) NOT NULL,
+  country VARCHAR(50) NOT NULL,
+  sity VARCHAR(50) NOT NULL,
+  hosting VARCHAR(50) NOT NULL,
+  proxy VARCHAR(50) NOT NULL
+);
